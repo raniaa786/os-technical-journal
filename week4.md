@@ -1,1 +1,1 @@
-
+This week involved installing the applications I selected in Week 3 and beginning the initial security hardening of my Ubuntu Server. All configuration was performed remotely over SSH, which keeps the environment consistent with real server administration practices.
