@@ -88,3 +88,48 @@ This configuration ensures that repeated failed SSH login attempts are automatic
 <img width="676" height="414" alt="image" src="https://github.com/user-attachments/assets/187343d1-ab19-45ab-ab54-75fbc2044923" />
 
 <img width="1207" height="762" alt="image" src="https://github.com/user-attachments/assets/378e0b38-a421-44c7-9ba4-fb99394f75fc" />
+
+Task 4: Security Baseline Verification Script
+
+For this task, I created a security baseline verification script called security-baseline.sh. The purpose of this script is to check that all the security controls configured in Phase 4 and Phase 5 are correctly applied on the server.
+
+The script is designed to run directly on the server over SSH. When executed, it outputs a clear report showing the current security state of the system. This makes it easy to quickly confirm that key security settings have not been changed or misconfigured.
+
+The script verifies the following security areas:
+
+First, it checks the SSH configuration. It confirms that password authentication is disabled and that root login over SSH is not allowed. These settings help reduce the risk of brute-force attacks and unauthorised access.
+
+Next, the script checks the firewall configuration using UFW. It confirms that the firewall is active and that only the required services, such as OpenSSH and Apache, are allowed through the firewall.
+
+The script then verifies that Fail2Ban is running correctly. It checks that the Fail2Ban service is active and confirms that the SSH jail is enabled. This ensures that repeated failed login attempts are monitored and blocked automatically.
+
+AppArmor is also verified as part of the baseline. The script confirms that AppArmor is loaded and enforcing security profiles, which adds an additional layer of protection by restricting what applications can access on the system.
+
+In addition to this, the script checks whether automatic security updates are enabled using the unattended-upgrades package. This ensures that important security patches are applied automatically without manual intervention.
+
+Finally, the script displays basic system information such as disk usage, memory usage, and users with sudo privileges. This provides extra context about the system state and helps with ongoing monitoring.
+
+By running this script, I can quickly verify that the server remains compliant with the security configuration defined in previous phases. This provides a simple but effective way to validate the security baseline before performance testing and future changes.
+
+Screenshots below show the script permissions, execution, and output confirming that all security controls are active.
+
+<img width="682" height="709" alt="image" src="https://github.com/user-attachments/assets/1ee98edd-dffb-40d6-b8e0-1b286ace88c1" />
+
+<img width="709" height="718" alt="image" src="https://github.com/user-attachments/assets/f5dbe50e-6d66-4038-93a5-74034149a3d7" />
+
+<img width="819" height="475" alt="image" src="https://github.com/user-attachments/assets/323654e2-72c8-4bd1-a5e2-f1ae0f13dc1f" />
+
+Task 5: Remote Server Monitoring Script
+
+In this task, I created a remote monitoring script that connects to the server over SSH and collects basic system and security information. The purpose of this script is to demonstrate how a workstation can remotely monitor a server, rather than logging in manually each time.
+
+I created the script on the workstation and named it monitor-server.sh. The script is designed to connect to the server using SSH and then run common system commands such as checking memory usage, disk usage, and service status. The output is saved to a timestamped log file so that monitoring results can be reviewed later.
+
+When running the script, it correctly attempted to connect to the server using SSH. However, the connection failed. This behaviour is expected based on the security configuration applied earlier in the project.
+
+In Phase 4, password-based SSH authentication was disabled as part of the SSH hardening process. This means the server now only allows SSH access using key-based authentication. Since SSH keys were not yet configured for this monitoring script, the server rejected the connection attempt.
+
+Although the script did not successfully connect, this outcome confirms that the SSH security configuration is working as intended. The server is correctly refusing connections that do not meet the required authentication method. This demonstrates that the system is protected against unauthorised remote access.
+
+In a production environment, this script would be updated to use SSH key-based authentication so that monitoring can run automatically without weakening security. For the purposes of this coursework, the failed connection still provides useful evidence that secure remote access controls are in place and being enforced.
+
