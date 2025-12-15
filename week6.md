@@ -37,3 +37,16 @@ Overall, this phase demonstrated that the server can handle temporary high-load 
 <img width="819" height="100" alt="image" src="https://github.com/user-attachments/assets/ebcf6283-2b39-40da-98e4-41a4c9eaf5ed" />
 
 <img width="613" height="51" alt="image" src="https://github.com/user-attachments/assets/cfc9451c-4759-47e9-9ff6-9c5113e5e38e" />
+
+Performance Graphs and Visual Analysis
+
+To better present the results of the performance testing, I created bar charts to visualise CPU usage and memory usage under different conditions. The graphs compare system behaviour when the server was idle, under load, and after the stress tests had completed.
+
+The CPU usage graph shows a clear increase during the stress test, with usage rising significantly compared to the idle state. After the test finished, CPU usage returned to normal levels, which indicates that the system recovered correctly once the load was removed.
+
+The memory usage graph shows a smaller but noticeable increase during the memory stress test. Memory usage increased under load and then dropped back close to its original level after testing. No swap space was used at any point, which suggests that the system had sufficient physical memory available.
+
+These visualisations make it easier to compare system performance across different states and clearly demonstrate the impact of stress testing on system resources.
+<img width="430" height="259" alt="image" src="https://github.com/user-attachments/assets/fced2aa5-76b2-44a8-989d-e3ab116c378d" />
+<img width="426" height="255" alt="image" src="https://github.com/user-attachments/assets/23dc450e-f281-48c7-949b-b4c21efe85b1" />
+<img width="540" height="175" alt="image" src="https://github.com/user-attachments/assets/37c5f05e-21e4-48f8-81c4-25cf9ed0cba5" />
