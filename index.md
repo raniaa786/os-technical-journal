@@ -9,5 +9,5 @@ All weekly entries are linked below.
 - [Week 3 – Application Selection](week3.md)
 - [Week 4 – Initial Configuration & SSH Hardening](week4.md)
 - [Week 5 – Advanced Security & Monitoring](week5.md)
-- Week 6 – Performance Testing (coming soon)
-- Week 7 – Security Audit and Final Evaluation (coming soon)
+- [Week 6 – Performance Testing](week6.md)
+- [Week 7 – Security Audit and Final Evaluation](week7.md)
