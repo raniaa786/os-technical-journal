@@ -38,6 +38,16 @@ Overall, this phase demonstrated that the server can handle temporary high-load 
 
 <img width="613" height="51" alt="image" src="https://github.com/user-attachments/assets/cfc9451c-4759-47e9-9ff6-9c5113e5e38e" />
 
+Network Performance Analysis
+
+To evaluate network performance, I tested latency and packet reliability using a simple ICMP ping test:
+
+ping -c 5 google.com
+<img width="868" height="256" alt="image" src="https://github.com/user-attachments/assets/e12ef0ee-a983-4edb-b14e-2837bfc8226e" />
+
+
+The results showed that all five packets were successfully transmitted and received with 0% packet loss, indicating a stable network connection. The average round-trip time was approximately 20 ms, with response times remaining consistent across all requests. This suggests that the server has reliable network connectivity with low latency, even while performance testing was being conducted. Overall, the network performance was stable and did not present any bottlenecks during this phase.
+
 Performance Graphs and Visual Analysis
 
 To better present the results of the performance testing, I created bar charts to visualise CPU usage and memory usage under different conditions. The graphs compare system behaviour when the server was idle, under load, and after the stress tests had completed.
